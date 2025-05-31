@@ -130,9 +130,8 @@ def main():
     else:    
         ss_sasa_dict = features.get_secondary_structure_and_sasa(pdb_file, stride_executable=stride_path, chain_id=chain_id)
     ss_sasa_list = features.parse_ss_sasa_for_chain(ss_sasa_dict, chain_id=chain_id)
-    print(f"len(query_alignment): {len(query_alignment)}", query_alignment)
-    print(f"len(ss_sasa_list): {len(ss_sasa_list)}", ss_sasa_list)
-    
+    print('dict len ', len(ss_sasa_dict))
+    print('list len ', len(ss_sasa_list))
     # 5. Combine all features into a single list
     combined_feats = features.combine_features(query_alignment, cleavage_pos, entropy_list, extension_list, disorder_dict, ss_sasa_list)
 
